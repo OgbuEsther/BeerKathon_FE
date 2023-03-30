@@ -4,7 +4,7 @@ const liveURL = "https://football-predict-api.onrender.com/api";
 
 interface register {
   name: string;
-  username: string;
+  userName: string;
   email: string;
   password: string;
   phoneNumber: string;
@@ -17,7 +17,7 @@ interface login {
 
 export const RegisterUser = async ({
   name,
-  username,
+  userName,
   email,
   password,
   phoneNumber,
@@ -26,7 +26,7 @@ export const RegisterUser = async ({
   return await axios
     .post(`${liveURL}/registeruser`, {
       name,
-      username,
+      userName,
       email,
       password,
       phoneNumber,

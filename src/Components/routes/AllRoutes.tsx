@@ -1,6 +1,7 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
-import Dashboard from "../admin/dashboard/Dashboard";
+import Dashboard from "../Admin/Dashboard";
+
 import SignIn from "../Auth/SignIn";
 import SignUp from "../Auth/SignUp";
 import HomeSreeen from "../landingPage/HomeSreeen";

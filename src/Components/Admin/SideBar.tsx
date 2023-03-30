@@ -6,10 +6,9 @@ import { ImHome2 } from "react-icons/im";
 import { IoIosRocket, IoMdPerson } from "react-icons/io";
 import { NavLink, useNavigate } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
-// import img from "../Assets/easy.png";
+
 import { BsArrowRightShort } from "react-icons/bs";
-// import { UseAppDispatch } from "../Global/Store";
-// import { logoutAdmin } from "../Global/ReduxState";
+
 import Swal from "sweetalert2";
 
 const SideBar = () => {
@@ -28,14 +27,14 @@ const SideBar = () => {
   return (
     <Container>
       <Top>
-        <Img src="image"/>{" "}
+        <Img />{" "}
       </Top>
       <Home>
         <Icon2>
           <MdDashboard />
         </Icon2>
         <NavLink
-          to="/dashboard"
+          to="/admindashboard"
           style={({ isActive }) => {
             return {
               textDecoration: isActive ? "none" : "none",

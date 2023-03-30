@@ -28,7 +28,7 @@ const Cards = () => {
             <MdOutlineAccountBalanceWallet />
           </IconHold>
           <CardTitle>wallet Number </CardTitle>
-          <CardInfo>name</CardInfo>
+          <CardInfo></CardInfo>
         </CardHold>
       </Card>
       <Card>
@@ -41,7 +41,7 @@ const Cards = () => {
             <FaMoneyBillAlt />
           </IconHold>
           <CardTitle>Company name</CardTitle>
-          <CardInfo>name</CardInfo>
+          <CardInfo></CardInfo>
         </CardHold>
       </Card>
       <Card>
@@ -54,7 +54,7 @@ const Cards = () => {
             <GiExpense />
           </IconHold>
           <CardTitle>Company code</CardTitle>
-          <CardInfo>name</CardInfo>
+          <CardInfo> </CardInfo>
         </CardHold>
       </Card>
       <Card>
@@ -67,10 +67,10 @@ const Cards = () => {
             <BsFillPiggyBankFill />
           </IconHold>
           <CardTitle>Balance</CardTitle>
-        
-            <CardInfo>name</CardInfo>
+      
           
-        
+            <CardInfo> </CardInfo>
+          
         </CardHold>
       </Card>
     </Container>

@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 // import { UseAppSelector } from "../Global/Store";
 // import { getOneAdmin } from "../api/adminEndpoints";
 
-const Recent = () => {
+const Latesttransact = () => {
   // const user = UseAppSelector((state) => state.Admin);
   // const getAdmin = useQuery({
   //   queryKey: ["singleAdmin"],
@@ -42,7 +42,7 @@ const Recent = () => {
   );
 };
 
-export default Recent;
+export default Latesttransact;
 
 const Container = styled.div`
   width: 93%;

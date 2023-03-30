@@ -5,7 +5,8 @@ const Table = () => {
   return (
     <div>
         <Container>
-        <TableStyle>
+       <Wrapper>
+       <TableStyle>
           <table>
             <tr>
               <th>name</th>
@@ -21,6 +22,7 @@ const Table = () => {
        
           </table>
         </TableStyle>
+       </Wrapper>
         </Container>
     </div>
   )
@@ -64,8 +66,18 @@ const Container = styled.div`
   padding: 30px;
   margin-top: 30px;
   flex-direction: column;
-background-color: transparent;
+
   @media screen and (max-width: 500px) {
     padding: 20px;
   }
+`;
+
+
+const Wrapper = styled.div`
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  padding-top: 90px;
 `;

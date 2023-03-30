@@ -3,6 +3,7 @@ import styled from "styled-components";
 import rstar from "../Assets/stars.svg";
 import lstar from "../Assets/stars.svg";
 import phone from "../Assets/phone.png";
+import football from "../Assets/football.jpg";
 import flower from "../Assets/flower.svg";
 import { BsPerson } from "react-icons/bs";
 import { IoMailOutline } from "react-icons/io5";
@@ -98,7 +99,7 @@ const Signup = () => {
             You’re a few steps away. Fill the required form and start trading
             like a boss 😎
           </p>
-          <Img src={phone} alt="" />
+          <Img src={football} alt="" />
           <img
             src={flower}
             alt=""

@@ -17,17 +17,21 @@ import { NavLink, useNavigate } from "react-router-dom";
 // import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-// import { createUser } from "../API/Endpoint";
+import { registerClient } from "../Global/reduxState";
+import { RegisterUser } from "../api/User";
+import { useDispatch } from "react-redux";
+import { UseAppDispatch } from "../Global/Store";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const dispatch = UseAppDispatch();
 
   const userSchema = yup
     .object({
       name: yup.string().required("please enter a name"),
       email: yup.string().required("please enter an email"),
       username: yup.string().required("please enter a username"),
-      phoneNumber: yup.number().required("please your phone number"),
+      phoneNumber: yup.string().required("please your phone number"),
       password: yup.string().required("please enter a password"),
       confirmPassword: yup
         .string()
@@ -37,40 +41,49 @@ const Signup = () => {
     .required();
   type formData = yup.InferType<typeof userSchema>;
 
-  // const {
-  //   handleSubmit,
-  //   formState: { errors },
-  //   reset,
-  //   register,
-  // } = useForm<formData>({
-  //   resolver: yupResolver(userSchema),
-  // });
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(userSchema),
+  });
 
-  // const posting = useMutation({
-  //   mutationKey: ["createduser"],
-  //   mutationFn: createUser,
+  const posting = useMutation({
+    mutationKey: ["Registeruser"],
+    mutationFn: RegisterUser,
 
-  //   onSuccess: (myData) => {
-  //     console.log("user", myData);
-  //     //   dispatch(login(myData.data));
-  //     Swal.fire({
-  //       title: "User registered sucessfully",
-  //       html: "redirecting to login",
-  //       timer: 1000,
-  //       timerProgressBar: true,
+    onSuccess: (myData) => {
+      console.log("user", myData);
+      dispatch(registerClient(myData.data));
+      Swal.fire({
+        title: "User registered sucessfully",
+        html: "redirecting to login",
+        timer: 1000,
+        timerProgressBar: true,
 
-  //       willClose: () => {
-  //         navigate("/login");
-  //       },
-  //     });
-  //   },
-  // });
+        willClose: () => {
+          navigate("/");
+        },
+      });
+    },
+    onError: (error: any) => {
+      // console.log("error", error);
+      // handle error here
+      Swal.fire({
+        title: "registration failed",
+        text: "Something went wrong! .....make sure you fill in the valid details",
+        icon: "error",
+      });
+    },
+  });
 
-  // const Submit = handleSubmit(async (data: any) => {
-  //   // console.log(data);
+  const Submit = handleSubmit(async (data: any) => {
+    // console.log(data);
 
-  //   posting.mutate(data);
-  // });
+    posting.mutate(data);
+  });
   return (
     <div>
       <Container>
@@ -107,7 +120,7 @@ const Signup = () => {
             style={{ position: "absolute", bottom: "1%", left: "1px" }}
           />
         </Left>
-        <Right>
+        <Right onSubmit={Submit}>
           <h2>Create an Account</h2>
           <p>Let us know you 😎</p>
           <Box>
@@ -119,8 +132,8 @@ const Signup = () => {
                   color: "silver",
                 }}
               />
-              <input placeholder="Name" />
-              {/* <Erro>{errors?.name && errors?.name?.message}</Erro> */}
+              <input {...register("name")} placeholder="Name" type="text" />
+              <Erro>{errors?.name && errors?.name?.message}</Erro>
             </Inputs>
             <Inputs>
               <BsPerson
@@ -130,8 +143,12 @@ const Signup = () => {
                   color: "silver",
                 }}
               />
-              <input placeholder="UserName" />
-              {/* <Erro>{errors?.username && errors?.username?.message}</Erro> */}
+              <input
+                {...register("username")}
+                placeholder="UserName"
+                type="text"
+              />
+              <Erro>{errors?.username && errors?.username?.message}</Erro>
             </Inputs>
             <Inputs>
               <IoMailOutline
@@ -141,8 +158,12 @@ const Signup = () => {
                   color: "silver",
                 }}
               />
-              <input placeholder="E-mail address" />
-              {/* <Erro>{errors?.email && errors?.email?.message}</Erro> */}
+              <input
+                {...register("email")}
+                placeholder="E-mail address"
+                type="email"
+              />
+              <Erro>{errors?.email && errors?.email?.message}</Erro>
             </Inputs>
             <Inputs>
               <BsTelephone
@@ -152,8 +173,12 @@ const Signup = () => {
                   color: "silver",
                 }}
               />
-              <input placeholder="Phone-no" />
-              {/* <Erro>{errors?.phoneNumber && errors?.phoneNumber?.message}</Erro> */}
+              <input
+                {...register("phoneNumber")}
+                placeholder="Phone-no"
+                type="text"
+              />
+              <Erro>{errors?.phoneNumber && errors?.phoneNumber?.message}</Erro>
             </Inputs>
             <Inputs>
               <TbSquareKey
@@ -163,8 +188,12 @@ const Signup = () => {
                   color: "silver",
                 }}
               />
-              <input placeholder="Password" />
-              {/* <Erro>{errors?.password && errors?.password?.message}</Erro> */}
+              <input
+                {...register("password")}
+                placeholder="Password"
+                type="password"
+              />
+              <Erro>{errors?.password && errors?.password?.message}</Erro>
             </Inputs>
             <Inputs>
               <TbSquareKey
@@ -174,7 +203,11 @@ const Signup = () => {
                   color: "silver",
                 }}
               />
-              <input placeholder="Confirm password" />
+              <input
+                {...register("confirmPassword")}
+                placeholder="Confirm password"
+                type="password"
+              />
               <Erro>
                 {/* {errors?.confirmPassword && errors?.confirmPassword?.message}s */}
               </Erro>

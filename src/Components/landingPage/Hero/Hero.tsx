@@ -3,6 +3,9 @@ import styled from "styled-components";
 import hero from "../../Assets/hero.jpg";
 import { NavLink } from "react-router-dom";
 import { TfiWorld } from "react-icons/tfi";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Hero = () => {
   const settings = {
@@ -34,9 +37,11 @@ const Hero = () => {
               </NavLink>
             </TextHold>
           </Left>
-          <Right>
-            <img src={hero} alt="" />
-          </Right>
+          <Slider>
+            <Right>
+              <img src={hero} alt="" />
+            </Right>
+          </Slider>
         </Wrapper>
       </Container>
     </div>

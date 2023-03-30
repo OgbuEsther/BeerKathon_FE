@@ -1,13 +1,19 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
 import Dashboard from "../Admin/Dashboard";
-import LeaderBoard from "../Admin/LeaderBoard/Dashboard"
-import Match from "../Admin/Start/Dashboard"
-import Users from "../Admin/view/Dashboard"
+import LeaderBoard from "../Admin/LeaderBoard/Dashboard";
+import Match from "../Admin/Start/Dashboard";
+import Users from "../Admin/view/Dashboard";
 
 import SignIn from "../Auth/SignIn";
 import SignUp from "../Auth/SignUp";
 import HomeSreeen from "../landingPage/HomeSreeen";
+
+//User Routes begins from here
+import UserDashboard from "../UserDashboard/Dashboard";
+import UserLeaderboard from "../UserDashboard/LeaderBoard/Dashboard";
+import UserMatch from "../UserDashboard/Start/Dashboard";
+import Prediction from "../UserDashboard/viewPrediction/Dashboard";
 
 const AllRoutes = () => {
   const elements = useRoutes([
@@ -28,19 +34,34 @@ const AllRoutes = () => {
       element: <Dashboard />,
     },
     {
-        path : "/leaderboard",
-        element : <LeaderBoard/>
+      path: "/leaderboard",
+      element: <LeaderBoard />,
     },
     {
-        path : "/start-match",
-        element : <Match />
+      path: "/start-match",
+      element: <Match />,
     },
     {
-        path : "/view-users",
-        element : <Users />
+      path: "/view-users",
+      element: <Users />,
     },
-  
-    
+
+    {
+      path: "/userdashboard",
+      element: <UserDashboard />,
+    },
+    {
+      path: "/useViewBoard",
+      element: <UserLeaderboard />,
+    },
+    {
+      path: "/userMatch",
+      element: <UserMatch />,
+    },
+    {
+      path: "/Prediction",
+      element: <Prediction />,
+    },
   ]);
   return <div>{elements}</div>;
 };

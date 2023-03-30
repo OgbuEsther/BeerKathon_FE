@@ -142,7 +142,8 @@ const SignIn = () => {
               marginLeft: "60px",
               marginTop: "20px",
               alignItems: "center",
-            }}>
+            }}
+          >
             <input
               type="checkbox"
               style={{ width: "15px", height: "15px", background: "#f9f4ff" }}
@@ -152,7 +153,8 @@ const SignIn = () => {
                 margin: "0",
                 marginLeft: "10px",
                 fontSize: "15px",
-              }}>
+              }}
+            >
               Always remember me
             </p>
           </Div>

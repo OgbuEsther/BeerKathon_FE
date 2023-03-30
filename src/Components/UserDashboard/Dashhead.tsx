@@ -84,7 +84,7 @@ const Dashhead = () => {
                 <IoMdPerson />
               </Icon2>
               <NavLink
-                to="/leaderboard"
+                to="/useViewBoard"
                 style={({ isActive }) => {
                   return {
                     textDecoration: isActive ? "none" : "none",
@@ -104,7 +104,7 @@ const Dashhead = () => {
             </Home2>
             {show4 ? (
               <Staffs>
-                <NavLink to="/start-match" style={{ textDecoration: "none" }}>
+                <NavLink to="/userMatch" style={{ textDecoration: "none" }}>
                   <p>start-match</p>
                 </NavLink>
               </Staffs>
@@ -115,7 +115,7 @@ const Dashhead = () => {
                 <IoMdPerson />
               </Icon2>
               <NavLink
-                to="/view-users"
+                to="/Prediction"
                 style={({ isActive }) => {
                   return {
                     textDecoration: isActive ? "none" : "none",
@@ -123,7 +123,7 @@ const Dashhead = () => {
                   };
                 }}
               >
-                <Text3>users</Text3>
+                <Text3>Prediction</Text3>
               </NavLink>
             </Home2>
 

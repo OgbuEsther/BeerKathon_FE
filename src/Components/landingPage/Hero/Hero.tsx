@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import hero from "../../assets/hero.jpg"
+import hero from "../../Assets/hero.jpg"
 import { NavLink } from "react-router-dom";
 import { TfiWorld } from "react-icons/tfi";
 

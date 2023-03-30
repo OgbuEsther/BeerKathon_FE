@@ -82,7 +82,7 @@ const Header = () => {
         <Container boxShadow={show ? "value" : ""} fixed="">
           <Wrapper>
             <LogoNav>
-              <Logo onClick={backToTop}>Maverick</Logo>
+              <Logo onClick={backToTop}>FootBall</Logo>
               <Nav>
                 <Navigation onClick={toHero}>Home</Navigation>
                 <Navigation onClick={toAbout}>About</Navigation>

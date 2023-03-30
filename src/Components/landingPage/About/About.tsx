@@ -8,7 +8,7 @@ const About = () => {
       <Container>
         <Wrapper>
           <Left>
-            <h2>About Mavericks</h2>
+            <h2>About FootBall</h2>
             <h1>You probably want to know about us right? and what we do?</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
@@ -35,6 +35,7 @@ const Right = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  background-color: #9901E8;
 
   @media screen and (max-width: 768px) {
     height: 50vh;

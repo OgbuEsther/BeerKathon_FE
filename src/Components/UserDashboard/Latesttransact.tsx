@@ -3,20 +3,19 @@ import React from "react";
 import styled from "styled-components";
 
 import { useQuery } from "@tanstack/react-query";
-// import { UseAppSelector } from "../Global/Store";
-// import { getOneAdmin } from "../api/adminEndpoints";
-
+import { UseAppSelector } from "../Global/Store";
+import { singleUser } from "../api/User";
 const Latesttransact = () => {
-  // const user = UseAppSelector((state) => state.Admin);
-  // const getAdmin = useQuery({
-  //   queryKey: ["singleAdmin"],
-  //   queryFn: () => getOneAdmin(user?._id),
-  // });
+  const user = UseAppSelector((state) => state.Client);
+  const getUser = useQuery({
+    queryKey: ["singleAdmin"],
+    queryFn: () => singleUser(user?._id),
+  });
 
   return (
     <Container>
       <Wrapper>
-        <Title>User Predictions</Title>
+        <Title>Your Predictions</Title>
         <Table>
           <table>
             <tr>
@@ -25,11 +24,16 @@ const Latesttransact = () => {
               <th>Prize</th>
             </tr>
 
-            <tr>
-              <td> Chelsea</td>
-              <td>38.5</td>
-              <td>1000</td>
-            </tr>
+            {
+      getUser?.data?.data?.predict?.map((el:any)=>(
+        <tr>
+        <td>{el?.name} </td>
+        <td>123 </td>
+        <td>1000</td>
+      </tr>
+      ))
+     }
+       
           </table>
         </Table>
         <BtnHold>

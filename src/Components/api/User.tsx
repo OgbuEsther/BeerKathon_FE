@@ -48,12 +48,12 @@ export const Login = async ({ email, password }: login) => {
 
 //get one user
 
-export const singleUser = async(id:string)=>{
+export const singleUser = async(id:any)=>{
   return await axios.get(`${liveURL}/getsingleuser/${id}`).then((res)=>res.data)
 }
 
 //PREDICTIONS
-export const allPredictions = async(req:Request , res:Response)=>{
+export const allPredictions = async()=>{
   return await axios.get(`/${liveURL}/prediction`).then((res)=>res.data)
 }
 

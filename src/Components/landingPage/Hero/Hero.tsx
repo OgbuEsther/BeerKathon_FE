@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import hero from "../../assets/hero.jpg"
+import hero from "../../Assets/hero.jpg";
 import { NavLink } from "react-router-dom";
 import { TfiWorld } from "react-icons/tfi";
 
@@ -15,7 +15,9 @@ const Hero = () => {
                 The best & most trusted platform to Play and Predict games
               </Title>
               <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi dignissimos sit necessitatibus quos iure dolorum ipsam repellat sequi magnam perferendis?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Excepturi dignissimos sit necessitatibus quos iure dolorum ipsam
+                repellat sequi magnam perferendis?
               </p>
               <NavLink to="/get-started" style={{ textDecoration: "none" }}>
                 <button>
@@ -84,7 +86,6 @@ const Money = styled.div`
     width: 10vw;
   }
 `;
-
 
 const Title = styled.h1`
   width: 90%;

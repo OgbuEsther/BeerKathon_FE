@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import about from "../../assets/hero1.jpg";
+import about from "../../Assets/hero1.jpg";
 
 const About = () => {
   return (

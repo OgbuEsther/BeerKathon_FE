@@ -38,7 +38,7 @@ const Table = () => {
       <Wrapper>
        
       
-        <Recent />
+       <Latesttransact />
 
       </Wrapper>
     </Container>

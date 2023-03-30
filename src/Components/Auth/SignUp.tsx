@@ -30,7 +30,7 @@ const Signup = () => {
     .object({
       name: yup.string().required("please enter a name"),
       email: yup.string().required("please enter an email"),
-      username: yup.string().required("please enter a username"),
+      userName: yup.string().required("please enter a username"),
       phoneNumber: yup.string().required("please your phone number"),
       password: yup.string().required("please enter a password"),
       confirmPassword: yup
@@ -64,7 +64,7 @@ const Signup = () => {
         timerProgressBar: true,
 
         willClose: () => {
-          navigate("/");
+          navigate("/userdashboard");
         },
       });
     },
@@ -144,11 +144,11 @@ const Signup = () => {
                 }}
               />
               <input
-                {...register("username")}
+                {...register("userName")}
                 placeholder="UserName"
                 type="text"
               />
-              <Erro>{errors?.username && errors?.username?.message}</Erro>
+              <Erro>{errors?.userName && errors?.userName?.message}</Erro>
             </Inputs>
             <Inputs>
               <IoMailOutline

@@ -81,7 +81,7 @@ const SideBar = () => {
           <IoMdPerson />
         </Icon2>
         <NavLink
-          to="/transaction"
+          to="/view-users"
           style={({ isActive }) => {
             return {
               textDecoration: isActive ? "none" : "none",
@@ -89,7 +89,7 @@ const SideBar = () => {
             };
           }}
         >
-          <Text3>Transaction</Text3>
+          <Text3>users</Text3>
         </NavLink>
       </Home2>
 

@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 import Dashboard from "../Admin/Dashboard";
 import LeaderBoard from "../Admin/LeaderBoard/Dashboard"
 import Match from "../Admin/Start/Dashboard"
+import Users from "../Admin/view/Dashboard"
 
 import SignIn from "../Auth/SignIn";
 import SignUp from "../Auth/SignUp";
@@ -33,7 +34,12 @@ const AllRoutes = () => {
     {
         path : "/start-match",
         element : <Match />
-    }
+    },
+    {
+        path : "/view-users",
+        element : <Users />
+    },
+  
     
   ]);
   return <div>{elements}</div>;

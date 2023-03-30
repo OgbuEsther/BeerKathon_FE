@@ -118,7 +118,7 @@ const Dashhead = () => {
                 <IoMdPerson />
               </Icon2>
               <NavLink
-                to="/transaction"
+                to="/view-users"
                 style={({ isActive }) => {
                   return {
                     textDecoration: isActive ? "none" : "none",
@@ -126,7 +126,7 @@ const Dashhead = () => {
                   };
                 }}
               >
-                <Text3>Transaction</Text3>
+                <Text3>users</Text3>
               </NavLink>
             </Home2>
 

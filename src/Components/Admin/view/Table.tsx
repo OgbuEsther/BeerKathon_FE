@@ -1,18 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import img from "../Assets/person.png";
-
-import { FaGoogleWallet } from "react-icons/fa";
-import { MdOutlineCancel } from "react-icons/md";
-
-
-import { NavLink } from "react-router-dom";
-// import { UseAppSelector } from "../Global/Store";
-import { useQuery } from "@tanstack/react-query";
-import Cards from "../Cards";
-import Recent from "../Recent";
-import Latesttransact from "../Latesttransact";
-
+import Latesttransact from "./Latesttransact";
 // import { getOneAdmin } from "../api/adminEndpoints";
 
 const Table = () => {
@@ -36,10 +25,7 @@ const Table = () => {
   return (
     <Container>
       <Wrapper>
-       
-      
-       <Latesttransact />
-
+<Latesttransact />
       </Wrapper>
     </Container>
   );
@@ -49,7 +35,32 @@ export default Table;
 
 
 
-
+const TableStyle = styled.div`
+  overflow-x: auto;
+  font-size: 14px;
+  table {
+    width: 100%;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  th,
+  td {
+    padding: 15px 10px;
+    text-align: left;
+  }
+  th {
+    font-size: 13px;
+    background-color: #0d71fa;
+    color: #fff;
+  }
+`;
 
 
 

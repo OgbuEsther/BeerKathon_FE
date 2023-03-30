@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import rstar from "../../Assets/stars.svg";
-import lstar from "../../Assets/stars.svg";
-import phone from "../../Assets/phone.png";
-import flower from "../../Assets/flower.svg";
+// import rstar from "../../Assets/stars.svg";
+// import lstar from "../../Assets/stars.svg";
+// import phone from "../../Assets/phone.png";
+// import flower from "../../Assets/flower.svg";
 import { BsPerson } from "react-icons/bs";
 import { IoMailOutline } from "react-icons/io5";
 import { BsTelephone } from "react-icons/bs";
@@ -150,7 +150,7 @@ const Signup = () => {
                   color: "silver",
                 }}
               />
-              <input  placeholder="Phone-no" />
+              <input placeholder="Phone-no" />
               {/* <Erro>{errors?.phoneNumber && errors?.phoneNumber?.message}</Erro> */}
             </Inputs>
             <Inputs>
@@ -172,10 +172,7 @@ const Signup = () => {
                   color: "silver",
                 }}
               />
-              <input
-               
-                placeholder="Confirm password"
-              />
+              <input placeholder="Confirm password" />
               <Erro>
                 {/* {errors?.confirmPassword && errors?.confirmPassword?.message}s */}
               </Erro>

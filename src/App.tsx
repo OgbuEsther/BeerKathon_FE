@@ -1,5 +1,5 @@
 import React from "react";
-import AllRoutes from "./Components/routes/AllRoutes";
+import AllRoutes from "./Components/Routes/AllRoutes";
 const App = () => {
   return (
     <div>

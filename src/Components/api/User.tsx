@@ -15,6 +15,7 @@ interface login {
   password: string;
 }
 
+
 export const RegisterUser = async ({
   name,
   userName,
@@ -43,3 +44,22 @@ export const Login = async ({ email, password }: login) => {
     })
     .then((res) => res.data);
 };
+
+
+//get one user
+
+export const singleUser = async(id:string)=>{
+  return await axios.get(`${liveURL}/getsingleuser/${id}`).then((res)=>res.data)
+}
+
+//PREDICTIONS
+export const allPredictions = async(req:Request , res:Response)=>{
+  return await axios.get(`/${liveURL}/prediction`).then((res)=>res.data)
+}
+
+
+//create prediction
+
+export const CreatePrediction= async(id:string , matchID : string, data:any) =>{
+  return await axios.post(`${liveURL}/${id}/${matchID}/create-prediction`, data).then((res)=> res.data)
+}

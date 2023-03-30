@@ -17,8 +17,8 @@ import { useMutation } from "@tanstack/react-query";
 // import { login, Userlogin } from "../Global/ReduxState";
 
 const SignIn = () => {
-  const navigate = useNavigate();
-  const dispatch = UseAppDispatch();
+  // const navigate = useNavigate();
+  // const dispatch = UseAppDispatch();
 
   const userSchema = yup
     .object({
@@ -28,52 +28,52 @@ const SignIn = () => {
     .required();
   type formData = yup.InferType<typeof userSchema>;
 
-  const {
-    handleSubmit,
-    formState: { errors },
-    reset,
-    register,
-  } = useForm<formData>({
-    resolver: yupResolver(userSchema),
-  });
+  // const {
+  //   handleSubmit,
+  //   formState: { errors },
+  //   reset,
+  //   register,
+  // } = useForm<formData>({
+  //   resolver: yupResolver(userSchema),
+  // });
 
-  const posting = useMutation({
-    mutationKey: ["login"],
-    mutationFn: LoginUser,
+  // const posting = useMutation({
+  //   mutationKey: ["login"],
+  //   mutationFn: LoginUser,
 
-    onSuccess: (myData) => {
-      // console.log("this is the user", myData);
-      dispatch(Userlogin(myData.data));
+  //   onSuccess: (myData) => {
+  //     // console.log("this is the user", myData);
+  //     dispatch(Userlogin(myData.data));
 
-      Swal.fire({
-        title: "Login succesful",
-        html: "Taking you to your dashboard",
-        timer: 1000,
-        timerProgressBar: true,
+  //     Swal.fire({
+  //       title: "Login succesful",
+  //       html: "Taking you to your dashboard",
+  //       timer: 1000,
+  //       timerProgressBar: true,
 
-        didOpen: () => {
-          Swal.showLoading();
-        },
+  //       didOpen: () => {
+  //         Swal.showLoading();
+  //       },
 
-        willClose: () => {
-          navigate("/user-dashboard");
-        },
-      });
-    },
-    onError: (error: any) => {
-      Swal.fire({
-        title: "registration failed",
-        text: "email or password incorrect",
-        icon: "error",
-      });
-    },
-  });
+  //       willClose: () => {
+  //         navigate("/user-dashboard");
+  //       },
+  //     });
+  //   },
+  //   onError: (error: any) => {
+  //     Swal.fire({
+  //       title: "registration failed",
+  //       text: "email or password incorrect",
+  //       icon: "error",
+  //     });
+  //   },
+  // });
 
-  const Submit = handleSubmit(async (data) => {
-    posting.mutate(data);
-    // console.log(data);
-    // reset()
-  });
+  // const Submit = handleSubmit(async (data) => {
+  //   posting.mutate(data);
+  //   // console.log(data);
+  //   // reset()
+  // });
 
   return (
     <div>
@@ -112,7 +112,7 @@ const SignIn = () => {
             style={{ position: "absolute", bottom: "1%", left: "1px" }}
           />
         </Left>
-        <Right onSubmit={Submit}>
+        <Right>
           <h2>Log in</h2>
           <Inputs>
             <BsPerson
@@ -121,11 +121,8 @@ const SignIn = () => {
                 fontSize: "25px",
               }}
             />
-            <input
-              {...register("email")}
-              placeholder="Enter email or username"
-            />
-            <span>{errors?.email && errors?.email?.message}</span>
+            <input placeholder="Enter email or username" />
+            {/* <span>{errors?.email && errors?.email?.message}</span> */}
           </Inputs>
 
           <Inputs>
@@ -135,8 +132,8 @@ const SignIn = () => {
                 fontSize: "25px",
               }}
             />
-            <input {...register("password")} placeholder="Password" />
-            <span>{errors?.password && errors?.password?.message}</span>
+            <input placeholder="Password" />
+            {/* <span>{errors?.password && errors?.password?.message}</span> */}
           </Inputs>
           <Div
             style={{

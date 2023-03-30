@@ -180,20 +180,8 @@ const Signup = () => {
             </Inputs>
           </Box>
           <Div>
-            <input
-              type="checkbox"
-              style={{ width: "15px", height: "15px", background: "#f9f4ff" }}
-            />
-            <p
-              style={{
-                margin: "0",
-                marginLeft: "10px",
-                fontSize: "15px",
-              }}>
-              I agree to mavericks{" "}
-              <span style={{ color: "blue" }}>Terms and Conditions</span> &
-              <span style={{ color: "blue" }}>Privacy Policy</span>.
-            </p>
+            Already have an account{" "}
+            <span style={{ color: "blue" }}>Login here</span>
           </Div>
           <Button type="submit">Create Account</Button>
         </Right>

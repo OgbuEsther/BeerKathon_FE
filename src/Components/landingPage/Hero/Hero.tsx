@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import hero from "../../Assets/hero.jpg";
-import manyballs from "../../Assets/manyballs.avif";
-import footfield from "../../Assets/football.png";
+import manyballs from "../Assets/manyballs.avif";
+import footfield from "../Assets/football.png";
 import { NavLink } from "react-router-dom";
 import { IoFootballOutline } from "react-icons/io5";
 import Slider from "react-slick";

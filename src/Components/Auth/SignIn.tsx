@@ -12,14 +12,15 @@ import Swal from "sweetalert2";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
-// import { UseAppDispatch } from "../Global/Store";
+
 import { useMutation } from "@tanstack/react-query";
-// import { LoginUser } from "../API/Endpoint";
-// import { login, Userlogin } from "../Global/ReduxState";
+import { UseAppDispatch } from "../Global/Store";
+import { Login } from "../api/User";
+import { registerClient } from "../Global/reduxState";
 
 const SignIn = () => {
-  // const navigate = useNavigate();
-  // const dispatch = UseAppDispatch();
+  const navigate = useNavigate();
+  const dispatch = UseAppDispatch();
 
   const userSchema = yup
     .object({
@@ -29,52 +30,52 @@ const SignIn = () => {
     .required();
   type formData = yup.InferType<typeof userSchema>;
 
-  // const {
-  //   handleSubmit,
-  //   formState: { errors },
-  //   reset,
-  //   register,
-  // } = useForm<formData>({
-  //   resolver: yupResolver(userSchema),
-  // });
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(userSchema),
+  });
 
-  // const posting = useMutation({
-  //   mutationKey: ["login"],
-  //   mutationFn: LoginUser,
+  const posting = useMutation({
+    mutationKey: ["login"],
+    mutationFn: Login,
 
-  //   onSuccess: (myData) => {
-  //     // console.log("this is the user", myData);
-  //     dispatch(Userlogin(myData.data));
+    onSuccess: (myData) => {
+      // console.log("this is the user", myData);
+      dispatch(registerClient(myData.data));
 
-  //     Swal.fire({
-  //       title: "Login succesful",
-  //       html: "Taking you to your dashboard",
-  //       timer: 1000,
-  //       timerProgressBar: true,
+      Swal.fire({
+        title: "Login succesful",
+        html: "Taking you to your dashboard",
+        timer: 1000,
+        timerProgressBar: true,
 
-  //       didOpen: () => {
-  //         Swal.showLoading();
-  //       },
+        didOpen: () => {
+          Swal.showLoading();
+        },
 
-  //       willClose: () => {
-  //         navigate("/user-dashboard");
-  //       },
-  //     });
-  //   },
-  //   onError: (error: any) => {
-  //     Swal.fire({
-  //       title: "registration failed",
-  //       text: "email or password incorrect",
-  //       icon: "error",
-  //     });
-  //   },
-  // });
+        willClose: () => {
+          // navigate("/user-dashboard");
+        },
+      });
+    },
+    onError: (error: any) => {
+      Swal.fire({
+        title: "registration failed",
+        text: "email or password incorrect",
+        icon: "error",
+      });
+    },
+  });
 
-  // const Submit = handleSubmit(async (data) => {
-  //   posting.mutate(data);
-  //   // console.log(data);
-  //   // reset()
-  // });
+  const Submit = handleSubmit(async (data) => {
+    posting.mutate(data);
+    // console.log(data);
+    // reset()
+  });
 
   return (
     <div>
@@ -113,7 +114,7 @@ const SignIn = () => {
             style={{ position: "absolute", bottom: "1%", left: "1px" }}
           />
         </Left>
-        <Right>
+        <Right onSubmit={Submit}>
           <h2>Log in</h2>
           <Inputs>
             <BsPerson
@@ -122,8 +123,8 @@ const SignIn = () => {
                 fontSize: "25px",
               }}
             />
-            <input placeholder="Enter your email " />
-            {/* <span>{errors?.email && errors?.email?.message}</span> */}
+            <input {...register("email")} placeholder="Enter your email " />
+            <span>{errors?.email && errors?.email?.message}</span>
           </Inputs>
 
           <Inputs>
@@ -133,7 +134,7 @@ const SignIn = () => {
                 fontSize: "25px",
               }}
             />
-            <input placeholder="Password" />
+            <input {...register("password")} placeholder="Password" />
             {/* <span>{errors?.password && errors?.password?.message}</span> */}
           </Inputs>
           <Div
@@ -142,7 +143,8 @@ const SignIn = () => {
               marginLeft: "60px",
               marginTop: "20px",
               alignItems: "center",
-            }}>
+            }}
+          >
             <input
               type="checkbox"
               style={{ width: "15px", height: "15px", background: "#f9f4ff" }}
@@ -152,7 +154,8 @@ const SignIn = () => {
                 margin: "0",
                 marginLeft: "10px",
                 fontSize: "15px",
-              }}>
+              }}
+            >
               Always remember me
             </p>
           </Div>

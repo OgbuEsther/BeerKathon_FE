@@ -7,8 +7,8 @@ interface loginClient {
 }
 
 interface userData {
-  Name: string;
-  userName: string;
+  name: string;
+  username: string;
   email: string;
   password: string;
   phoneNumber: string;

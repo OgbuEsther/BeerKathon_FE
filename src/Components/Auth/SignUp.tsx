@@ -16,6 +16,7 @@ import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
 // import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 // import { createUser } from "../API/Endpoint";
 
 const Signup = () => {
@@ -181,7 +182,9 @@ const Signup = () => {
           </Box>
           <Div>
             Already have an account{" "}
-            <span style={{ color: "blue" }}>Login here</span>
+            <Span to="/sign-in" style={{ color: "blue" }}>
+              Login here
+            </Span>
           </Div>
           <Button type="submit">Create Account</Button>
         </Right>
@@ -259,7 +262,10 @@ const Div = styled.div`
     }
   }
 `;
-
+const Span = styled(Link)`
+  text-decoration: none;
+  margin-left: 5px;
+`;
 const Inputs = styled.div`
   background-color: #f9f4ff;
   border-radius: 10px;

@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import rstar from "../../Assets/stars.svg";
-import lstar from "../../Assets/stars.svg";
-import phone from "../../Assets/phone.png";
-import flower from "../../Assets/flower.svg";
+import rstar from "../Assets/stars.svg";
+import lstar from "../Assets/stars.svg";
+import phone from "../Assets/phone.png";
+import football from "../Assets/football.png";
+import flower from "../Assets/flower.svg";
 import { BsPerson } from "react-icons/bs";
 import { TbSquareKey } from "react-icons/tb";
 import * as yup from "yup";
@@ -102,10 +103,10 @@ const SignIn = () => {
             Glad to have <br /> you back
           </H1>
           <p>
-            Glad to have you back We are glad to have you back ☺️, Let’s get you
-            trading
+            We are Glad to have you back ☺️, Let’s get you to your dashboard to
+            upload their predicted score{" "}
           </p>
-          <Img src={phone} alt="" />
+          <Img src={football} alt="" />
           <img
             src={flower}
             alt=""
@@ -121,7 +122,7 @@ const SignIn = () => {
                 fontSize: "25px",
               }}
             />
-            <input placeholder="Enter email or username" />
+            <input placeholder="Enter your email " />
             {/* <span>{errors?.email && errors?.email?.message}</span> */}
           </Inputs>
 
@@ -158,8 +159,8 @@ const SignIn = () => {
           <Button type="submit">Log in</Button>
           <P>
             I don't have an account.{" "}
-            <NavLink to="/register">
-              <span style={{ color: "blue" }}>Create one</span>
+            <NavLink style={{ textDecoration: "none" }} to="/get-started">
+              <span style={{ color: "blue" }}>Create One</span>
             </NavLink>
           </P>
         </Right>
@@ -306,19 +307,6 @@ const Img = styled.img`
     height: 210px;
     margin-top: 60px;
     margin-left: 120px;
-  }
-
-  :hover {
-    animation: bounce 0.5s;
-  }
-  @keyframes bounce {
-    0%,
-    100% {
-      transform: translate(-20%, -20%) scale(1);
-    }
-    50% {
-      transform: translate(-20%, -20%) scale(1.2);
-    }
   }
 `;
 

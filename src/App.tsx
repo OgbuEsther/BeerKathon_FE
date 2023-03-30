@@ -1,10 +1,11 @@
 import React from "react";
-import Signup from "./Components/Auth/SignUp";
+import "./App.css";
+import AllRoutes from "./Components/routes/AllRoutes";
 
 const App = () => {
   return (
     <div>
-      <Signup />
+      <AllRoutes />
     </div>
   );
 };

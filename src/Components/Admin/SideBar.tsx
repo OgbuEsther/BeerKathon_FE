@@ -51,7 +51,7 @@ const SideBar = () => {
           <IoMdPerson />
         </Icon2>
         <NavLink
-          to="/staffs"
+          to="/leaderboard"
           style={({ isActive }) => {
             return {
               textDecoration: isActive ? "none" : "none",
@@ -59,7 +59,7 @@ const SideBar = () => {
             };
           }}
         >
-          <Text2>Staffs</Text2>
+          <Text2>leaderboard</Text2>
         </NavLink>
       </Home2>
 
@@ -67,12 +67,12 @@ const SideBar = () => {
         <Icon2>
           <IoMdPerson />
         </Icon2>
-        <Text3 onClick={Toggle}>Financials</Text3>
+        <Text3 onClick={Toggle}>match</Text3>
       </Home2>
       {show ? (
         <Staffs>
-          <NavLink to="/payroll" style={{ textDecoration: "none" }}>
-            <p>Send Payment</p>
+          <NavLink to="/start-match" style={{ textDecoration: "none" }}>
+            <p>start-match</p>
           </NavLink>
         </Staffs>
       ) : null}

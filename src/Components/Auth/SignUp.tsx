@@ -182,7 +182,7 @@ const Signup = () => {
           </Box>
           <Div>
             Already have an account{" "}
-            <Span to="/sign-in" style={{ color: "blue" }}>
+            <Span to="/sign-in" style={{ color: "#8246F3" }}>
               Login here
             </Span>
           </Div>
@@ -317,24 +317,25 @@ const Img = styled.img`
   left: 35%;
   bottom: 1px;
 
+  animation: bounce 1s infinite;
+  height: 150px;
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-80px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   @media screen and (max-width: 960px) {
     position: static;
     height: 210px;
     margin-top: 60px;
     margin-left: 120px;
-  }
-
-  :hover {
-    animation: bounce 0.5s;
-  }
-  @keyframes bounce {
-    0%,
-    100% {
-      transform: translate(-20%, -20%) scale(1);
-    }
-    50% {
-      transform: translate(-20%, -20%) scale(1.2);
-    }
   }
 `;
 

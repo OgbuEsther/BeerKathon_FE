@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import pic from "../../Assets/abPhone.webp";
 
-
-
 const AppWorks = () => {
   return (
     <div>
@@ -12,11 +10,10 @@ const AppWorks = () => {
           <Head>
             <div>
               <H>Wondering How the App Works?</H>
-              <P>predict in few simple steps</P>
+              <P>Predict in few simple steps</P>
               <Picture src={pic} />
             </div>
           </Head>
-         
         </Wrapper>
       </Container>
     </div>

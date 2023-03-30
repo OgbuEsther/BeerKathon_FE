@@ -17,7 +17,7 @@ const Recent = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>List Of Staff</Title>
+        <Title>View LeaderBoard</Title>
 
         <Table>
           <table>

@@ -2,7 +2,6 @@ import React from "react";
 
 import styled from "styled-components";
 
-
 import { useQuery } from "@tanstack/react-query";
 // import { UseAppSelector } from "../Global/Store";
 // import { getOneAdmin } from "../api/adminEndpoints";
@@ -17,21 +16,20 @@ const Latesttransact = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>View Predictions</Title>
+        <Title>User Predictions</Title>
         <Table>
           <table>
             <tr>
-              <th>Recepient</th>
-              <th>Date</th>
-              <th>Amount</th>
+              <th>Teams</th>
+              <th>Odds</th>
+              <th>Prize</th>
             </tr>
-            
-              <tr>
-                <td>esther </td>
-                <td>12/03/23</td>
-                <td>1000</td>
-              </tr>
-       
+
+            <tr>
+              <td> Chelsea</td>
+              <td>38.5</td>
+              <td>1000</td>
+            </tr>
           </table>
         </Table>
         <BtnHold>

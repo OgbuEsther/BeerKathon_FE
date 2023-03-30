@@ -91,6 +91,7 @@ const Container = styled.div`
   justify-content: center;
   margin-left: 260px;
   overflow: hidden;
+  height: 100vh;
   @media screen and (max-width: 1024px) {
     width: 100%;
     margin-left: 0px;

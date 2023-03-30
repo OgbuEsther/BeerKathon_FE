@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Dashhead from '../Dashhead'
 import SideBar from '../SideBar'
-import Table from './Table'
+import Table from "./Table"
+
 
 
 const Dashboard = () => {
@@ -11,7 +12,7 @@ const Dashboard = () => {
           <Dashhead />
       <SideBar />
   
-  <Table />
+<Table />
     </Container>
   )
 }

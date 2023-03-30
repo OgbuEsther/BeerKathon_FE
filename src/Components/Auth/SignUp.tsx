@@ -182,7 +182,7 @@ const Signup = () => {
           </Box>
           <Div>
             Already have an account{" "}
-            <Span to="/sign-in" style={{ color: "blue" }}>
+            <Span to="/sign-in" style={{ color: "#8246F3" }}>
               Login here
             </Span>
           </Div>

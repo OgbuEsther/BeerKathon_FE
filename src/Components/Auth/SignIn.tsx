@@ -104,7 +104,7 @@ const SignIn = () => {
           </H1>
           <p>
             We are Glad to have you back ☺️, Let’s get you to your dashboard to
-            upload their predicted score{" "}
+            upload your predicted score{" "}
           </p>
           <Img src={football} alt="" />
           <img
@@ -160,7 +160,7 @@ const SignIn = () => {
           <P>
             I don't have an account.{" "}
             <NavLink style={{ textDecoration: "none" }} to="/get-started">
-              <span style={{ color: "blue" }}>Create One</span>
+              <span style={{ color: "#8246F3" }}>Create One</span>
             </NavLink>
           </P>
         </Right>
@@ -301,6 +301,20 @@ const Img = styled.img`
   position: absolute;
   left: 35%;
   bottom: 1px;
+
+  animation: bounce 1s infinite;
+  height: 150px;
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-80px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
   @media screen and (max-width: 960px) {
     position: static;

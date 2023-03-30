@@ -5,6 +5,14 @@ import { NavLink } from "react-router-dom";
 import { TfiWorld } from "react-icons/tfi";
 
 const Hero = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <div>
       <Container>
@@ -28,9 +36,6 @@ const Hero = () => {
           </Left>
           <Right>
             <img src={hero} alt="" />
-
-            <Money>{/* <img src={money} alt="" /> */}</Money>
-            {/* <Hundred src={hundred} /> */}
           </Right>
         </Wrapper>
       </Container>

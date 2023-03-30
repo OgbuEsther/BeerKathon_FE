@@ -3,7 +3,7 @@ import styled from "styled-components";
 import rstar from "../Assets/stars.svg";
 import lstar from "../Assets/stars.svg";
 import phone from "../Assets/phone.png";
-import football from "../Assets/football.jpg";
+import football from "../Assets/football.png";
 import flower from "../Assets/flower.svg";
 import { BsPerson } from "react-icons/bs";
 import { IoMailOutline } from "react-icons/io5";
@@ -90,14 +90,14 @@ const Signup = () => {
             }}
           />
           <NavLink to="/" style={{ textDecoration: "none" }}>
-            <h4>MAVERICK</h4>
+            <h4>MAVERICKS</h4>
           </NavLink>
           <H1>
             Let’s Get <br /> You Started
           </H1>
           <p>
-            You’re a few steps away. Fill the required form and start trading
-            like a boss 😎
+            You’re a few steps away. Fill the required form and predict scores
+            for certain matches 😎
           </p>
           <Img src={football} alt="" />
           <img
@@ -190,7 +190,7 @@ const Signup = () => {
                 marginLeft: "10px",
                 fontSize: "15px",
               }}>
-              I agree to GIFTCARDSTONAIRA{" "}
+              I agree to mavericks{" "}
               <span style={{ color: "blue" }}>Terms and Conditions</span> &
               <span style={{ color: "blue" }}>Privacy Policy</span>.
             </p>

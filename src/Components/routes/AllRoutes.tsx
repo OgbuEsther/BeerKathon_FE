@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
+import SignUp from '../Auth/SignUp'
 import HomeSreeen from '../landingPage/HomeSreeen'
 
 const AllRoutes = () => {
@@ -7,6 +8,10 @@ const AllRoutes = () => {
         {
             path : "/",
             element : <HomeSreeen />
+        },
+        {
+            path : "/get-started",
+            element : <SignUp />
         }
     ])
   return (

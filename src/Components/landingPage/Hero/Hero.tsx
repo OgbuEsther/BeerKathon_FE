@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import hero from "../../Assets/hero.jpg";
+import manyballs from "../../Assets/manyballs.avif";
+import footfield from "../../Assets/football.png";
 import { NavLink } from "react-router-dom";
-import { TfiWorld } from "react-icons/tfi";
+import { IoFootballOutline } from "react-icons/io5";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,10 +12,14 @@ import "slick-carousel/slick/slick-theme.css";
 const Hero = () => {
   const settings = {
     dots: true,
+    fade: true,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    cssEase: "linear",
+    autoplaySpeed: 5000,
   };
 
   return (
@@ -32,16 +38,15 @@ const Hero = () => {
               </p>
               <NavLink to="/get-started" style={{ textDecoration: "none" }}>
                 <button>
-                  Use the Web App <TfiWorld />
+                  Use the Web App <IoFootballOutline />
                 </button>
               </NavLink>
             </TextHold>
           </Left>
-          <Slider>
-            <Right>
-              <img src={hero} alt="" />
-            </Right>
-          </Slider>
+
+          <Right>
+            <img src={hero} alt="" />
+          </Right>
         </Wrapper>
       </Container>
     </div>

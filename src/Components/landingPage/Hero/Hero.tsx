@@ -12,7 +12,7 @@ const Hero = () => {
           <Left>
             <TextHold>
               <Title>
-                The best & most trusted platform to buy Play and Predict games
+                The best & most trusted platform to Play and Predict games
               </Title>
               <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi dignissimos sit necessitatibus quos iure dolorum ipsam repellat sequi magnam perferendis?

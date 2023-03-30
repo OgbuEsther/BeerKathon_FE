@@ -13,6 +13,7 @@ interface userData {
   password: string;
   phoneNumber: string;
   confirmPassword: string;
+  _id:string
 }
 
 const initialState = {

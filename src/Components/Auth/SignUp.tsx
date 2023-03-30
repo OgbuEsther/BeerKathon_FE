@@ -324,7 +324,21 @@ const Img = styled.img`
     margin-left: 120px;
   }
 
-  :hover {
+  animation: bounce 1s infinite;
+  height: 60px;
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  /* :hover {
     animation: bounce 0.5s;
   }
   @keyframes bounce {
@@ -335,7 +349,7 @@ const Img = styled.img`
     50% {
       transform: translate(-20%, -20%) scale(1.2);
     }
-  }
+  } */
 `;
 
 const Container = styled.div`

@@ -17,7 +17,7 @@ const Latesttransact = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>Latest transactions</Title>
+        <Title>View Predictions</Title>
         <Table>
           <table>
             <tr>

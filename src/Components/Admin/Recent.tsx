@@ -22,17 +22,17 @@ const Recent = () => {
         <Table>
           <table>
             <tr>
-              <th>Staff</th>
-              <th>Role</th>
-              <th>companyname</th>
+              <th>name</th>
+              <th>number</th>
+              <th>code</th>
             </tr>
-          
-              <tr >
+            
+              <tr>
                 <td>name </td>
-                <td>postion</td>
                 <td>number</td>
+                <td>code</td>
               </tr>
-        
+       
           </table>
         </Table>
 

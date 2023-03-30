@@ -317,39 +317,26 @@ const Img = styled.img`
   left: 35%;
   bottom: 1px;
 
+  animation: bounce 1s infinite;
+  height: 150px;
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-80px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   @media screen and (max-width: 960px) {
     position: static;
     height: 210px;
     margin-top: 60px;
     margin-left: 120px;
   }
-
-  animation: bounce 1s infinite;
-  height: 60px;
-  @keyframes bounce {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-
-  /* :hover {
-    animation: bounce 0.5s;
-  }
-  @keyframes bounce {
-    0%,
-    100% {
-      transform: translate(-20%, -20%) scale(1);
-    }
-    50% {
-      transform: translate(-20%, -20%) scale(1.2);
-    }
-  } */
 `;
 
 const Container = styled.div`

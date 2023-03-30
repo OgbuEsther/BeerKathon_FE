@@ -4,28 +4,19 @@ import { IoIosSearch, IoIosNotificationsOutline } from "react-icons/io";
 import { FiMenu, FiPower } from "react-icons/fi";
 import { IoIosRocket, IoMdPerson } from "react-icons/io";
 import SideBar from "./SideBar";
-import img from "../Assets/blush12.png";
-// import img2 from "../Assets/easy.png";
+
 import { MdDashboard } from "react-icons/md";
 import { NavLink, useNavigate } from "react-router-dom";
-// import { UseAppDispatch, UseAppSelector } from "../Global/Store";
 import { useQuery } from "@tanstack/react-query";
-// import { getOneAdmin } from "../api/adminEndpoints";
+
 import Swal from "sweetalert2";
-// import { logoutAdmin } from "../Global/ReduxState";
+
 
 const Dashhead = () => {
-  // const dispatch = UseAppDispatch();
+ 
   const navigate = useNavigate();
-  // const user = UseAppSelector((state) => state.Admin);
-
-  // console.log(user);
-
-  // const getAdmin = useQuery({
-  //   queryKey: ["singleAdmin"],
-  //   queryFn: () => getOneAdmin(user?._id),
-  // });
-
+ 
+  
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show4, setShow4] = useState(false);
@@ -54,8 +45,7 @@ const Dashhead = () => {
         <Mid>
           <Welcome>
             <h3>
-              welcome back
-              {/* Welcome Back <span>{user?.yourName.split(" ")[0]}</span> */}
+              Welcome Back <span></span>
             </h3>
           </Welcome>
         </Mid>
@@ -65,7 +55,7 @@ const Dashhead = () => {
             <Circle>2</Circle>
           </Icons>
           <Up>
-            {/* <Profile>{user?.yourName?.charAt(0).toUpperCase()}</Profile> */}
+            <Profile></Profile>
           </Up>
         </Right>
       </Wrapper>
@@ -73,7 +63,7 @@ const Dashhead = () => {
         <Hold onClick={Toggle3}>
           <Box>
             <Top>
-              <Img2 src="" />{" "}
+              <Img2 src="image"/>{" "}
             </Top>
             <Home>
               <Icon2>
@@ -97,7 +87,7 @@ const Dashhead = () => {
                 <IoMdPerson />
               </Icon2>
               <NavLink
-                to="/staffs"
+                to="/leaderboard"
                 style={({ isActive }) => {
                   return {
                     textDecoration: isActive ? "none" : "none",
@@ -105,7 +95,7 @@ const Dashhead = () => {
                   };
                 }}
               >
-                <Text2>Staffs</Text2>
+                <Text2>leaderboard</Text2>
               </NavLink>
             </Home2>
 
@@ -113,12 +103,12 @@ const Dashhead = () => {
               <Icon2>
                 <IoMdPerson />
               </Icon2>
-              <Text3 onClick={Toggle4}>Financials</Text3>
+              <Text3 onClick={Toggle4}>Match</Text3>
             </Home2>
             {show4 ? (
               <Staffs>
-                <NavLink to="/payroll" style={{ textDecoration: "none" }}>
-                  <p>Send Payment</p>
+                <NavLink to="/start-match" style={{ textDecoration: "none" }}>
+                  <p>start-match</p>
                 </NavLink>
               </Staffs>
             ) : null}

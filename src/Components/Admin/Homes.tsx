@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-// import img from "../Assets/person.png";
-// import Cards from "./Cards";
-// import Latesttransact from "./Latesttransact";
+import img from "../Assets/person.png";
+import Cards from "./Cards";
+import Latesttransact from "./Latesttransact";
 import { FaGoogleWallet } from "react-icons/fa";
 import { MdOutlineCancel } from "react-icons/md";
-// import Recent from "./Recent";
+
+import Recent from "./Recent";
 import { NavLink } from "react-router-dom";
 // import { UseAppSelector } from "../Global/Store";
 import { useQuery } from "@tanstack/react-query";
@@ -49,30 +50,30 @@ const Home = () => {
                   <Circle>
                     <FaGoogleWallet />
                   </Circle>
-                
-                    <Wallet>
+                 
+                    <Wallet >
                       <p>Wallet Balance</p>
                       <h3></h3>
                     </Wallet>
-             
+          
                 </Card2>
 
                 <Tap>
                   <h3>Admin Details: </h3>
                   <p>
-                    {/* Wallet number: <strong>{user?.walletNumber}</strong> */}
+                    Wallet number: <strong></strong>
                   </p>
                 </Tap>
 
                 <Tap2>
                   <p>
-                    {/* Company name: <strong>{user?.companyname}</strong> */}
+                    Company name: 
                   </p>
                 </Tap2>
 
                 <Tap2>
                   <p>
-                    {/* Company code: <strong>{user?.companyCode}</strong> */}
+                    Company code: <strong></strong>
                   </p>
                 </Tap2>
 
@@ -98,9 +99,9 @@ const Home = () => {
         <br />
         <br />
         <br />
-        {/* <Cards />
+        <Cards />
         <Recent />
-        <Latesttransact /> */}
+        <Latesttransact />
       </Wrapper>
     </Container>
   );

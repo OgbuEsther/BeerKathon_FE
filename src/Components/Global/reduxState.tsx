@@ -1,11 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
 
-interface loginClient {
-  email: string;
-  password: string;
-}
-
 interface userData {
   name: string;
   userName: string;
@@ -13,11 +8,22 @@ interface userData {
   password: string;
   phoneNumber: string;
   confirmPassword: string;
-  _id:any
+  _id: any;
+}
+
+interface AdminData {
+  name: string;
+  userName: string;
+  email: string;
+  password: string;
+  phoneNumber: string;
+  confirmPassword: string;
+  _id: any;
 }
 
 const initialState = {
   Client: {} as userData | null,
+  Admin: {} as AdminData | null,
 };
 
 const ReduxState = createSlice({
@@ -26,6 +32,9 @@ const ReduxState = createSlice({
   reducers: {
     registerClient: (state, { payload }: PayloadAction<userData>) => {
       state.Client = payload;
+    },
+    AdminLogin: (state, { payload }: PayloadAction<AdminData>) => {
+      state.Admin = payload;
     },
     logOut: (state) => {
       state.Client = null;

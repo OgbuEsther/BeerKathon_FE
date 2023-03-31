@@ -13,24 +13,23 @@ import Swal from "sweetalert2";
 import { SingleAdmin } from "../api/adminEndpoints";
 
 const Dashhead = () => {
-  const { userID } = useParams();
+  // const { userID } = useParams();
 
   // To bring in the user or admin to the dashboard header:
-  // const ReadEntireUsers = UseAppSelector((state) => {
-  //   state.Client;
-  // });
+  const GetAdmin = UseAppSelector((state) => state.Client);
 
+  console.log(GetAdmin);
   // To read a single user from the redux state
   // const ReadMyAdmin = ReadEntireUsers.filter((item) => item._id === userID);
 
   // Function for one user using tanstack query:
-  const Admin = useQuery({
-    queryKey: ["Official Admin", userID],
-    queryFn: () => {
-      return SingleAdmin(userID);
-    },
-  });
-  console.log(Admin);
+  // const Admin = useQuery({
+  //   queryKey: ["Official Admin", userID],
+  //   queryFn: () => {
+  //     return SingleAdmin(userID);
+  //   },
+  // });
+  // console.log(Admin);
   const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
@@ -61,7 +60,7 @@ const Dashhead = () => {
         <Mid>
           <Welcome>
             <h3>
-              Welcome Back <span> {Admin?.data?.data.userName} </span>
+              Welcome Back <span> {GetAdmin?.userName} </span>
             </h3>
           </Welcome>
         </Mid>
@@ -71,7 +70,7 @@ const Dashhead = () => {
             <Circle>2</Circle>
           </Icons>
           <Up>
-            <Profile></Profile>
+            <Profile>hh</Profile>
           </Up>
         </Right>
       </Wrapper>

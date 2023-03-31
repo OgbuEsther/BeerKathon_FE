@@ -12,7 +12,7 @@ import { NavLink } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 // import { getOneAdmin } from "../api/adminEndpoints";
 
-const Home = () => {
+const Homes = () => {
   const [show, setShow] = useState(false);
 
   const Toggle = () => {
@@ -50,12 +50,11 @@ const Home = () => {
                   <Circle>
                     <FaGoogleWallet />
                   </Circle>
-                 
-                    <Wallet >
-                      <p>Wallet Balance</p>
-                      <h3></h3>
-                    </Wallet>
-          
+
+                  <Wallet>
+                    <p>Wallet Balance</p>
+                    <h3></h3>
+                  </Wallet>
                 </Card2>
 
                 <Tap>
@@ -66,9 +65,7 @@ const Home = () => {
                 </Tap>
 
                 <Tap2>
-                  <p>
-                    Company name: 
-                  </p>
+                  <p>Company name:</p>
                 </Tap2>
 
                 <Tap2>
@@ -88,7 +85,7 @@ const Home = () => {
                     <button>Credit wallet</button>
                   </NavLink>
 
-                  <NavLink to="/payout" style={{textDecoration: "none"}}>
+                  <NavLink to="/payout" style={{ textDecoration: "none" }}>
                     <button>Withdraw to bank</button>
                   </NavLink>
                 </Holder>
@@ -107,7 +104,7 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Homes;
 const Holder = styled.div`
   display: flex;
   button {

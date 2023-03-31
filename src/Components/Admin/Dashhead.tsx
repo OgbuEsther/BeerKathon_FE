@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { IoIosSearch, IoIosNotificationsOutline } from "react-icons/io";
 import { FiMenu, FiPower } from "react-icons/fi";
 import { IoIosRocket, IoMdPerson } from "react-icons/io";
-import SideBar from "./SideBar";
 
 import { MdDashboard } from "react-icons/md";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -73,8 +72,7 @@ const Dashhead = () => {
                     textDecoration: isActive ? "none" : "none",
                     color: isActive ? "#2AA7FF" : "#3e4956",
                   };
-                }}
-              >
+                }}>
                 <Text1>Dashboard</Text1>
               </NavLink>
             </Home>
@@ -90,8 +88,7 @@ const Dashhead = () => {
                     textDecoration: isActive ? "none" : "none",
                     color: isActive ? "#2AA7FF" : "#3e4956",
                   };
-                }}
-              >
+                }}>
                 <Text2>leaderboard</Text2>
               </NavLink>
             </Home2>
@@ -121,8 +118,7 @@ const Dashhead = () => {
                     textDecoration: isActive ? "none" : "none",
                     color: isActive ? "#2AA7FF" : "#3e4956",
                   };
-                }}
-              >
+                }}>
                 <Text3>users</Text3>
               </NavLink>
             </Home2>
@@ -168,8 +164,7 @@ const Dashhead = () => {
                       );
                     }
                   });
-              }}
-            >
+              }}>
               <Icon2>
                 <FiPower />
               </Icon2>

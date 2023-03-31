@@ -1,21 +1,12 @@
 import React from "react";
 
 import styled from "styled-components";
-
-
-import { useQuery } from "@tanstack/react-query";
-// import { UseAppSelector } from "../Global/Store";
-// import { getOneAdmin } from "../api/adminEndpoints";
-
 const Latesttransact = () => {
-  // const user = UseAppSelector((state) => state.Admin);
-  // const getAdmin = useQuery({
-  //   queryKey: ["singleAdmin"],
-  //   queryFn: () => getOneAdmin(user?._id),
-  // });
+  
 
   return (
     <Container>
+    
       <Wrapper>
         <Title>View Predictions</Title>
         <Table>
@@ -25,12 +16,14 @@ const Latesttransact = () => {
               <th>Date</th>
               <th>Amount</th>
             </tr>
-            
-              <tr>
-                <td>esther </td>
-                <td>12/03/23</td>
-                <td>1000</td>
-              </tr>
+      
+        <tr>
+        <td>name </td>
+        <td>123 </td>
+        <td>1000</td>
+      </tr>
+   
+             
        
           </table>
         </Table>

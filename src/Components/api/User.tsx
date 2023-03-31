@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Ipredict } from "./Interfaces";
 
 const liveURL = "https://football-predict-api.onrender.com/api";
 
@@ -48,18 +49,30 @@ export const Login = async ({ email, password }: login) => {
 
 //get one user
 
-export const singleUser = async(id:string)=>{
+export const singleUser = async(id:any)=>{
   return await axios.get(`${liveURL}/getsingleuser/${id}`).then((res)=>res.data)
 }
 
 //PREDICTIONS
-export const allPredictions = async(req:Request , res:Response)=>{
+export const allPredictions = async()=>{
   return await axios.get(`/${liveURL}/prediction`).then((res)=>res.data)
 }
 
 
 //create prediction
 
-export const CreatePrediction= async(id:string , matchID : string, data:any) =>{
+export const CreatePrediction= async(id:string , matchID : string, data:Ipredict) =>{
   return await axios.post(`${liveURL}/${id}/${matchID}/create-prediction`, data).then((res)=> res.data)
+}
+
+///leader-table
+
+export const viewLeaderBoard = async(id:any)=>{
+  return await axios.get(`${liveURL}/${id}/user-predictions`).then((res)=>res.data)
+}
+
+///view-match
+
+export const viewAllMatches = async() =>{
+  return await axios.get(`${liveURL}/view-match`).then((res)=> res.data)
 }

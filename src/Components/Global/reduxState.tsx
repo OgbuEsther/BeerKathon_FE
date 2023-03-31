@@ -21,9 +21,15 @@ interface AdminData {
   _id: any;
 }
 
+interface MarchInterface {
+  TeamA: string;
+  TeamB: string;
+  Odds: string;
+}
 const initialState = {
   Client: {} as userData | null,
   Admin: {} as AdminData | null,
+  Marches: {} as MarchInterface | null,
 };
 
 const ReduxState = createSlice({
@@ -39,9 +45,12 @@ const ReduxState = createSlice({
     logOut: (state) => {
       state.Client = null;
     },
+    AllMarches: (state, { payload }: PayloadAction<MarchInterface>) => {
+      state.Marches = payload;
+    },
   },
 });
 
-export const { registerClient, logOut } = ReduxState.actions;
+export const { registerClient, logOut, AllMarches } = ReduxState.actions;
 
 export default ReduxState.reducer;

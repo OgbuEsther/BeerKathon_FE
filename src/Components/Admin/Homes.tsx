@@ -59,7 +59,7 @@ const Homes = () => {
                 </Card2>
 
                 <Tap>
-                  <h3>Match Details: </h3>
+                  <h3>March Details: </h3>
                   <input type="text" placeholder="Team A :" />
                 </Tap>
 
@@ -68,18 +68,13 @@ const Homes = () => {
                 </Tap2>
 
                 <Tap2>
-                  <input type="text" placeholder="Game Odds :" />
+                  <input type="text" placeholder="March Odds :" />
                 </Tap2>
-
-                <Tap2>
-                  <input type="text" placeholder="Prize" />
-                </Tap2>
-
                 <Holder>
                   <NavLink
                     to="/admindashboard"
                     style={{ textDecoration: "none" }}>
-                    <button>Create Match</button>
+                    <button>Create March</button>
                   </NavLink>
                 </Holder>
               </Wallets>

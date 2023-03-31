@@ -1,9 +1,9 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
-import Dashboard from "../Admin/Dashboard";
-import LeaderBoard from "../Admin/LeaderBoard/Dashboard";
-import Match from "../Admin/Start/Dashboard";
-import Users from "../Admin/view/Dashboard";
+import Dashboard from "../admin/Dashboard";
+import LeaderBoard from "../admin/LeaderBoard/Dashboard";
+import Match from "../admin/Start/Dashboard";
+import Users from "../admin/view/Dashboard";
 
 import SignIn from "../Auth/SignIn";
 import SignUp from "../Auth/SignUp";

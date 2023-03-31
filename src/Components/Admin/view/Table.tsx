@@ -1,26 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import img from "../Assets/person.png";
+
 import Latesttransact from "./Latesttransact";
 // import { getOneAdmin } from "../api/adminEndpoints";
 
 const Table = () => {
-  const [show, setShow] = useState(false);
 
-  const Toggle = () => {
-    setShow(!show);
-  };
-
-  const Toggle2 = () => {
-    setShow(false);
-  };
-
-  // const user = UseAppSelector((state) => state.Admin);
-  // const getAdmin = useQuery({
-  //   queryKey: ["singleAdmin"],
-  //   queryFn: () => getOneAdmin(user?._id),
-  // });
-  // console.log("this is getadmin", getAdmin);
 
   return (
     <Container>

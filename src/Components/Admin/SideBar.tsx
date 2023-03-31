@@ -40,8 +40,7 @@ const SideBar = () => {
               textDecoration: isActive ? "none" : "none",
               color: isActive ? "#2AA7FF" : "#3e4956",
             };
-          }}
-        >
+          }}>
           <Text1>Dashboard</Text1>
         </NavLink>
       </Home>
@@ -57,8 +56,7 @@ const SideBar = () => {
               textDecoration: isActive ? "none" : "none",
               color: isActive ? "#2AA7FF" : "#3e4956",
             };
-          }}
-        >
+          }}>
           <Text2>leaderboard</Text2>
         </NavLink>
       </Home2>
@@ -87,8 +85,7 @@ const SideBar = () => {
               textDecoration: isActive ? "none" : "none",
               color: isActive ? "#2AA7FF" : "#3e4956",
             };
-          }}
-        >
+          }}>
           <Text3>users</Text3>
         </NavLink>
       </Home2>
@@ -115,7 +112,7 @@ const SideBar = () => {
             .then((result) => {
               if (result.isConfirmed) {
                 // dispatch(logoutAdmin());
-                navigate("/optionsignin");
+                navigate("/");
                 swalWithBootstrapButtons.fire(
                   "logout successful!",
                   "logout successful.",
@@ -126,7 +123,7 @@ const SideBar = () => {
                 /* Read more about handling dismissals below */
                 result.dismiss === Swal.DismissReason.cancel
               ) {
-                navigate("/dashboard");
+                navigate("/admindashboard");
                 swalWithBootstrapButtons.fire(
                   "Cancelled",
                   "still on dashboard :)",
@@ -134,8 +131,7 @@ const SideBar = () => {
                 );
               }
             });
-        }}
-      >
+        }}>
         <Icon2>
           <FiPower />
         </Icon2>

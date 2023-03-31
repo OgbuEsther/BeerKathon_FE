@@ -5,12 +5,32 @@ import { FiMenu, FiPower } from "react-icons/fi";
 import { IoIosRocket, IoMdPerson } from "react-icons/io";
 
 import { MdDashboard } from "react-icons/md";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { UseAppSelector, UseAppDispatch } from "../Global/Store";
 
 import Swal from "sweetalert2";
+import { SingleAdmin } from "../api/adminEndpoints";
 
 const Dashhead = () => {
+  const { userID } = useParams();
+
+  // To bring in the user or admin to the dashboard header:
+  // const ReadEntireUsers = UseAppSelector((state) => {
+  //   state.Client;
+  // });
+
+  // To read a single user from the redux state
+  // const ReadMyAdmin = ReadEntireUsers.filter((item) => item._id === userID);
+
+  // Function for one user using tanstack query:
+  const Admin = useQuery({
+    queryKey: ["Official Admin", userID],
+    queryFn: () => {
+      return SingleAdmin(userID);
+    },
+  });
+  console.log(Admin);
   const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
@@ -41,7 +61,7 @@ const Dashhead = () => {
         <Mid>
           <Welcome>
             <h3>
-              Welcome Back <span></span>
+              Welcome Back <span> {Admin?.data?.data.userName} </span>
             </h3>
           </Welcome>
         </Mid>

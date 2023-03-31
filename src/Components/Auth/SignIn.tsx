@@ -58,7 +58,7 @@ const SignIn = () => {
         },
 
         willClose: () => {
-          // navigate("/user-dashboard");
+          navigate("/admindashboard");
         },
       });
     },

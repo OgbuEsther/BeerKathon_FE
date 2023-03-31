@@ -15,9 +15,17 @@ interface userData {
   confirmPassword: string;
   _id:any
 }
+interface predict {
+  teamAScore : string;
+  teamBScore : string;
+  amount : number
+}
+
+
 
 const initialState = {
   Client: {} as userData | null,
+  Predict : {} as predict | null
 };
 
 const ReduxState = createSlice({
@@ -27,12 +35,15 @@ const ReduxState = createSlice({
     registerClient: (state, { payload }: PayloadAction<userData>) => {
       state.Client = payload;
     },
+    Predict: (state, { payload }: PayloadAction<predict>) => {
+      state.Predict = payload;
+    },
     logOut: (state) => {
       state.Client = null;
     },
   },
 });
 
-export const { registerClient, logOut } = ReduxState.actions;
+export const { registerClient, logOut , Predict } = ReduxState.actions;
 
 export default ReduxState.reducer;

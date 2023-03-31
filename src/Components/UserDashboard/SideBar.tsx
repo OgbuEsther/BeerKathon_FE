@@ -35,7 +35,7 @@ const SideBar = () => {
           <MdDashboard />
         </Icon2>
         <NavLink
-          to="/admindashboard"
+          to="/userdashboard"
           style={({ isActive }) => {
             return {
               textDecoration: isActive ? "none" : "none",
@@ -52,7 +52,7 @@ const SideBar = () => {
           <BsClipboardData />
         </Icon2>
         <NavLink
-          to="/leaderboard"
+          to="/useViewBoard"
           style={({ isActive }) => {
             return {
               textDecoration: isActive ? "none" : "none",
@@ -72,7 +72,7 @@ const SideBar = () => {
       </Home2>
       {show ? (
         <Staffs>
-          <NavLink to="/start-match" style={{ textDecoration: "none" }}>
+          <NavLink to="/userMatch" style={{ textDecoration: "none" }}>
             <p>start-match</p>
           </NavLink>
         </Staffs>
@@ -82,7 +82,7 @@ const SideBar = () => {
           <IoMdPerson />
         </Icon2>
         <NavLink
-          to="/view-users"
+          to="/Prediction"
           style={({ isActive }) => {
             return {
               textDecoration: isActive ? "none" : "none",

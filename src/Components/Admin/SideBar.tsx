@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { FiMenu, FiTarget, FiPower, FiUpload } from "react-icons/fi";
 // import img from "../Assets/piggy.svg"
-import { ImHome2 } from "react-icons/im";
-import { IoIosRocket, IoMdPerson } from "react-icons/io";
+import { BsClipboardData } from "react-icons/bs";
+import { IoMdPerson, IoMdFootball } from "react-icons/io";
 import { NavLink, useNavigate } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
 
@@ -48,7 +48,7 @@ const SideBar = () => {
 
       <Home2>
         <Icon2>
-          <IoMdPerson />
+          <BsClipboardData />
         </Icon2>
         <NavLink
           to="/leaderboard"
@@ -65,9 +65,9 @@ const SideBar = () => {
 
       <Home2>
         <Icon2>
-          <IoMdPerson />
+          <IoMdFootball />
         </Icon2>
-        <Text3 onClick={Toggle}>match</Text3>
+        <Text3 onClick={Toggle}> Match</Text3>
       </Home2>
       {show ? (
         <Staffs>
@@ -95,8 +95,6 @@ const SideBar = () => {
 
       <Power
         onClick={() => {
-        
-
           const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
               confirmButton: "btn btn-success",
@@ -190,9 +188,9 @@ const Img = styled.img`
   height: 30px;
 `;
 const Power = styled.div`
-    display: flex;
-    align-items: center;
-    margin-top: 230px;
+  display: flex;
+  align-items: center;
+  margin-top: 230px;
 `;
 
 const Text5 = styled.div`

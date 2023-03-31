@@ -70,7 +70,7 @@ const Dashhead = () => {
             <Circle>2</Circle>
           </Icons>
           <Up>
-            <Profile>hh</Profile>
+            <Profile>{GetAdmin?.name.charAt(0).toUpperCase()}</Profile>
           </Up>
         </Right>
       </Wrapper>
@@ -108,7 +108,7 @@ const Dashhead = () => {
                     color: isActive ? "#2AA7FF" : "#3e4956",
                   };
                 }}>
-                <Text2>leaderboard</Text2>
+                <Text2>Leaderboard</Text2>
               </NavLink>
             </Home2>
 
@@ -138,7 +138,7 @@ const Dashhead = () => {
                     color: isActive ? "#2AA7FF" : "#3e4956",
                   };
                 }}>
-                <Text3>users</Text3>
+                <Text3>All Users</Text3>
               </NavLink>
             </Home2>
 

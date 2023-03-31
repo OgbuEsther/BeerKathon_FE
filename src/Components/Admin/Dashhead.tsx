@@ -10,7 +10,11 @@ import { useQuery } from "@tanstack/react-query";
 import { UseAppSelector, UseAppDispatch } from "../Global/Store";
 
 import Swal from "sweetalert2";
+
 import { SingleAdmin } from "../api/adminEndpoints";
+
+import { UseAppSelector } from "../Global/Store";
+
 
 const Dashhead = () => {
   // const { userID } = useParams();
@@ -31,6 +35,8 @@ const Dashhead = () => {
   // });
   // console.log(Admin);
   const navigate = useNavigate();
+
+  const user = UseAppSelector((state)=> state.Client)
 
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
@@ -60,7 +66,9 @@ const Dashhead = () => {
         <Mid>
           <Welcome>
             <h3>
+
               Welcome Back <span> {GetAdmin?.userName} </span>
+
             </h3>
           </Welcome>
         </Mid>

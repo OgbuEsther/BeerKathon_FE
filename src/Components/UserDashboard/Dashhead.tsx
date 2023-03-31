@@ -10,10 +10,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 import Swal from "sweetalert2";
+import { UseAppSelector } from "../Global/Store";
 
 const Dashhead = () => {
   const navigate = useNavigate();
-
+const user = UseAppSelector((state)=> state.Client)
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show4, setShow4] = useState(false);
@@ -42,7 +43,7 @@ const Dashhead = () => {
         <Mid>
           <Welcome>
             <h3>
-              Welcome Back <span></span>
+              Welcome Back <span>{user?.userName} </span>
             </h3>
           </Welcome>
         </Mid>

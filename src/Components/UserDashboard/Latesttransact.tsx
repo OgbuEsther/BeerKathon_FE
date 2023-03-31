@@ -8,10 +8,10 @@ import { singleUser } from "../api/User";
 const Latesttransact = () => {
   const user = UseAppSelector((state) => state.Client);
   const getUser = useQuery({
-    queryKey: ["singleAdmin"],
+    queryKey: ["singleUser"],
     queryFn: () => singleUser(user?._id),
   });
-
+console.log("this is get one user :" , getUser)
   return (
     <Container>
       <Wrapper>
@@ -28,7 +28,7 @@ const Latesttransact = () => {
       getUser?.data?.data?.predict?.map((el:any)=>(
         <tr>
         <td>{el?.name} </td>
-        <td>123 </td>
+        <td>{el?.odds} </td>
         <td>1000</td>
       </tr>
       ))

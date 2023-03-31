@@ -3,16 +3,37 @@ import styled from "styled-components";
 import { IoIosSearch, IoIosNotificationsOutline } from "react-icons/io";
 import { FiMenu, FiPower } from "react-icons/fi";
 import { IoIosRocket, IoMdPerson } from "react-icons/io";
-import SideBar from "./SideBar";
 
 import { MdDashboard } from "react-icons/md";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { UseAppSelector, UseAppDispatch } from "../Global/Store";
 
 import Swal from "sweetalert2";
+
+import { SingleAdmin } from "../api/adminEndpoints";
+
 import { UseAppSelector } from "../Global/Store";
 
+
 const Dashhead = () => {
+  // const { userID } = useParams();
+
+  // To bring in the user or admin to the dashboard header:
+  const GetAdmin = UseAppSelector((state) => state.Client);
+
+  console.log(GetAdmin);
+  // To read a single user from the redux state
+  // const ReadMyAdmin = ReadEntireUsers.filter((item) => item._id === userID);
+
+  // Function for one user using tanstack query:
+  // const Admin = useQuery({
+  //   queryKey: ["Official Admin", userID],
+  //   queryFn: () => {
+  //     return SingleAdmin(userID);
+  //   },
+  // });
+  // console.log(Admin);
   const navigate = useNavigate();
 
   const user = UseAppSelector((state)=> state.Client)
@@ -45,7 +66,9 @@ const Dashhead = () => {
         <Mid>
           <Welcome>
             <h3>
-              Welcome Back <span>{user?.userName} </span>
+
+              Welcome Back <span> {GetAdmin?.userName} </span>
+
             </h3>
           </Welcome>
         </Mid>
@@ -55,7 +78,7 @@ const Dashhead = () => {
             <Circle>2</Circle>
           </Icons>
           <Up>
-            <Profile></Profile>
+            <Profile>{GetAdmin?.name.charAt(0).toUpperCase()}</Profile>
           </Up>
         </Right>
       </Wrapper>
@@ -76,8 +99,7 @@ const Dashhead = () => {
                     textDecoration: isActive ? "none" : "none",
                     color: isActive ? "#2AA7FF" : "#3e4956",
                   };
-                }}
-              >
+                }}>
                 <Text1>Dashboard</Text1>
               </NavLink>
             </Home>
@@ -93,9 +115,8 @@ const Dashhead = () => {
                     textDecoration: isActive ? "none" : "none",
                     color: isActive ? "#2AA7FF" : "#3e4956",
                   };
-                }}
-              >
-                <Text2>leaderboard</Text2>
+                }}>
+                <Text2>Leaderboard</Text2>
               </NavLink>
             </Home2>
 
@@ -124,9 +145,8 @@ const Dashhead = () => {
                     textDecoration: isActive ? "none" : "none",
                     color: isActive ? "#2AA7FF" : "#3e4956",
                   };
-                }}
-              >
-                <Text3>users</Text3>
+                }}>
+                <Text3>All Users</Text3>
               </NavLink>
             </Home2>
 
@@ -171,8 +191,7 @@ const Dashhead = () => {
                       );
                     }
                   });
-              }}
-            >
+              }}>
               <Icon2>
                 <FiPower />
               </Icon2>

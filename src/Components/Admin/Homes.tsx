@@ -11,8 +11,9 @@ import { NavLink } from "react-router-dom";
 // import { UseAppSelector } from "../Global/Store";
 import { useQuery } from "@tanstack/react-query";
 // import { getOneAdmin } from "../api/adminEndpoints";
+import { IoIosFootball } from "react-icons/io";
 
-const Home = () => {
+const Homes = () => {
   const [show, setShow] = useState(false);
 
   const Toggle = () => {
@@ -38,7 +39,7 @@ const Home = () => {
         <Top>
           <Left>
             <Bold>Dashboard</Bold>
-            <button onClick={Toggle}>Credit Wallet</button>
+            <button onClick={Toggle}>Predict match</button>
           </Left>
           {show ? (
             <Slidein>
@@ -48,48 +49,32 @@ const Home = () => {
                 </Icon>
                 <Card2>
                   <Circle>
-                    <FaGoogleWallet />
+                    <IoIosFootball />
                   </Circle>
-                 
-                    <Wallet >
-                      <p>Wallet Balance</p>
-                      <h3></h3>
-                    </Wallet>
-          
+
+                  <Wallet>
+                    <p>UPLOAD MATCHES</p>
+                    <h3></h3>
+                  </Wallet>
                 </Card2>
 
                 <Tap>
-                  <h3>Admin Details: </h3>
-                  <p>
-                    Wallet number: <strong></strong>
-                  </p>
+                  <h3>March Details: </h3>
+                  <input type="text" placeholder="Team A :" />
                 </Tap>
 
                 <Tap2>
-                  <p>
-                    Company name: 
-                  </p>
+                  <input type="text" placeholder="Team B :" />
                 </Tap2>
 
                 <Tap2>
-                  <p>
-                    Company code: <strong></strong>
-                  </p>
+                  <input type="text" placeholder="March Odds :" />
                 </Tap2>
-
-                <Tap2>
-                  <p>
-                    Admin name: <strong></strong>
-                  </p>
-                </Tap2>
-
                 <Holder>
-                  <NavLink to="/payment" style={{ textDecoration: "none" }}>
-                    <button>Credit wallet</button>
-                  </NavLink>
-
-                  <NavLink to="/payout" style={{textDecoration: "none"}}>
-                    <button>Withdraw to bank</button>
+                  <NavLink
+                    to="/admindashboard"
+                    style={{ textDecoration: "none" }}>
+                    <button>Create March</button>
                   </NavLink>
                 </Holder>
               </Wallets>
@@ -107,13 +92,16 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Homes;
 const Holder = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   button {
     width: 160%;
     height: 50px;
     background-color: #3184f7;
+
     color: #fff;
     border-radius: 5px;
     border: none;
@@ -147,10 +135,16 @@ const Tap2 = styled.div`
   margin-top: 30px;
   display: flex;
   flex-direction: column;
-  p {
+  input {
     margin: 0;
     font-size: 13px;
     font-weight: 500;
+    padding: 15px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   }
   strong {
     font-size: 16px;
@@ -162,15 +156,21 @@ const Tap = styled.div`
     margin: 0;
     font-size: 19px;
     font-weight: 500;
+    margin-bottom: 40px;
   }
-  margin-top: 60px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  p {
+  input {
     margin: 0;
     font-size: 13px;
     font-weight: 500;
-    margin-top: 30px;
+    padding: 15px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   }
   strong {
     font-size: 16px;
@@ -185,7 +185,8 @@ const Circle = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  background-color: #3184f7;
+  /* background-color: #3184f7; */
+  background-color: #4f71a1;
   color: #fff;
   font-size: 30px;
 `;

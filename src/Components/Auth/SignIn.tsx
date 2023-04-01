@@ -146,6 +146,7 @@ const SignIn = () => {
             }}>
             <input
               type="checkbox"
+              placeholder = "hello"
               style={{ width: "15px", height: "15px", background: "#f9f4ff" }}
             />
             <p

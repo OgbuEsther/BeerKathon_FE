@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import axios from "axios"
 import { IoIosFootball } from "react-icons/io";
 import { MdOutlineCancel } from "react-icons/md";
 // import { getAllClients } from "../api/staffEndpoints";
@@ -8,7 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 // import { getOneAdmin } from "../api/adminEndpoints";
 // import { UseAppSelector } from "../Global/Store";
 import { NavLink, useNavigate } from "react-router-dom";
-import { viewAllMatches } from "../api/User";
+import {  viewAllMatches } from "../api/User";
 import Swal from "sweetalert2";
 import * as yup from "yup";
 import {CreatePrediction} from "../api/User"
@@ -16,10 +17,12 @@ import {CreatePrediction} from "../api/User"
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import { UseAppDispatch } from "../Global/Store";
+import { UseAppDispatch, UseAppSelector } from "../Global/Store";
 import { Predict } from "../Global/reduxState";
 
 const Recent = () => {
+  const user = UseAppSelector((state)=> state.Client)
+  const match = UseAppSelector((state)=> state.Marches)
   const navigate = useNavigate()
   const dispatch = UseAppDispatch();
   const userSchema = yup
@@ -42,41 +45,29 @@ const {
   resolver: yupResolver(userSchema),
 });
 
-const posting = useMutation({
-  mutationFn : CreatePrediction,
-  mutaionKey : ["predict"],
 
-  onSuccess: (myData) => {
-    
-    dispatch(Predict(myData.data));
-    Swal.fire({
-      title: "User registered sucessfully",
-      html: "redirecting to login",
-      timer: 1000,
-      timerProgressBar: true,
 
-      willClose: () => {
-        navigate("/userdashboard");
-      },
+const onSubmitFeesPlan = handleSubmit(async (data) => {
+  await axios
+    .post(`https://football-predict-api.onrender.com/api/${user?._id}/${match?._id}`, data)
+    .then((res) => {
+      console.log("this is res from plans file" , res)
+      navigate("/")
+      dispatch(Predict)
+      Swal.fire({
+        title: "succeful",
+        icon: "success",
+      });
+    })
+    .catch((err) => {
+      Swal.fire({
+        title: "an error occured",
+        icon: "error",
+        text: `${err.response?.data?.message}`,
+      });
+      console.log(err);
     });
-  },
-  onError: (error: any) => {
-    // console.log("error", error);
-    // handle error here
-    Swal.fire({
-      title: "registration failed",
-      text: "Something went wrong! .....make sure you fill in the valid details",
-      icon: "error",
-    });
-  },
 });
-
- const Submit = handleSubmit(async (data: any) => {
-    // console.log(data);
-
-    posting.mutate(data);
-  });
-
   
   
   const [show, setShow] = useState(false);
@@ -106,13 +97,13 @@ const posting = useMutation({
               <th>Match</th>
               <th>predicted Score</th>
             </tr>
-            {allMatches?.data?.data?.map((el: any) => (
-              <tr onClick={Toggle} key={el?._id}>
-                <td> {el?.name}</td>
+            {/* {allMatches?.data?.data?.map((el: any) => ( */}
+              <tr onClick={Toggle} >
+                <td>name </td>
                 <td>number</td>
                 <td>code</td>
               </tr>
-            ))}
+        
           </table>
         </Table>
 
@@ -138,29 +129,31 @@ const posting = useMutation({
 
               <Tap>
                 <h3>Match Details: </h3>
-                <input type="text" placeholder="Team A :" />
+                <input   {...register("teamAScore")} type="text" placeholder="Team A :" />
               </Tap>
 
               <Tap2>
-                <input type="text" placeholder="Team B :" />
+                <input   {...register("teamBScore")} type="text" placeholder="Team B :" />
               </Tap2>
 
               <Tap2>
-                <input type="text" placeholder="Game Odds :" />
+                <input   {...register("amount")} type="number" placeholder="Game Odds :" />
               </Tap2>
 
-              <Tap2>
-                <input type="text" placeholder="Prize" />
-              </Tap2>
+              {/* <Tap2>
+                <input   {...register("userName")} type="text" placeholder="Prize" />
+              </Tap2> */}
 
               <Holder>
-                <NavLink to="/payment" style={{ textDecoration: "none" }}>
+                {/* <NavLink to="/" style={{ textDecoration: "none" }}> */}
                   <button>Play Game</button>
-                </NavLink>
+                {/* </NavLink> */}
 
-                <NavLink to="/payout" style={{ textDecoration: "none" }}>
-                  <button>Checkout</button>
-                </NavLink>
+                {/* <NavLink to="/" style={{ textDecoration: "none" }}> */}
+                  <button onClick={()=>{
+                    onSubmitFeesPlan()
+                  }} >Checkout</button>
+                {/* </NavLink> */}
               </Holder>
             </Wallets>
           </Slidein>

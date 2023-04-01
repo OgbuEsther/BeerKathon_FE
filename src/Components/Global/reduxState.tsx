@@ -24,6 +24,7 @@ interface predict {
   teamAScore : string;
   teamBScore : string;
   amount : number
+  _id: any;
 }
 
 
@@ -32,6 +33,7 @@ interface MarchInterface {
   TeamA: string;
   TeamB: string;
   Odds: string;
+  _id: any;
 }
 const initialState = {
   Client: {} as userData | null,
@@ -40,7 +42,7 @@ const initialState = {
   Marches: {} as MarchInterface | null,
 
   Predict : {} as predict | null
-
+}
 
 const ReduxState = createSlice({
   name: "easyPay",

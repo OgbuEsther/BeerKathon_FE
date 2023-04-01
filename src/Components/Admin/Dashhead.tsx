@@ -13,7 +13,7 @@ import Swal from "sweetalert2";
 
 import { SingleAdmin } from "../api/adminEndpoints";
 
-import { UseAppSelector } from "../Global/Store";
+
 
 
 const Dashhead = () => {

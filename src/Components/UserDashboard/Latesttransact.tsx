@@ -27,8 +27,8 @@ console.log("this is get one user :" , getUser)
             {
       getUser?.data?.data?.predict?.map((el:any)=>(
         <tr>
-        <td>{el?.name} </td>
-        <td>{el?.odds} </td>
+        <td>{el?.teamA} </td>
+        <td>{el?.teamB} </td>
         <td>1000</td>
       </tr>
       ))

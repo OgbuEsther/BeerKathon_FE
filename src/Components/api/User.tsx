@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Ipredict } from "./Interfaces";
 
-const liveURL = "https://football-predict-api.onrender.com/api";
+export const liveURL = "https://football-predict-api.onrender.com/api";
 
 interface register {
   name: string;
